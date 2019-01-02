@@ -31,7 +31,10 @@ Work through the following challenges and get as far as you can in the allotted 
 Background:
 * This story should use the Asteroids Neo - Feed: https://api.nasa.gov/api.html#neows-feed
 
-Feature: A guest user visits the root page and enters a start date and end date. The resulting page will display the most dangerous day in that range based on which day has the most `is_potentially_dangerous_asteroid` set to `true`. Given the scenario below, it should be January 1, 2018 with 3 potentially dangerous asteroids.
+Feature: A guest user visits the root page and enters a start date and end date. 
+The resulting page will display the most dangerous day in that range based on 
+which day has the most `is_potentially_dangerous_asteroid` set to `true`. 
+Given the scenario below, it should be January 1, 2018 with 3 potentially dangerous asteroids.
 
 As a guest user
 When I visit "/"
@@ -61,7 +64,8 @@ Page should look something like this:
 
 ### Feature 2: API - Retrieving a user's favorites
 
-Background: This story assumes the base data from running `rake db:seed`. Registered user has an `api_key` of `abc123`.
+Background: This story assumes the base data from running `rake db:seed`. 
+Registered user has an `api_key` of `abc123`.
 
 ```
 As a registered user
@@ -86,10 +90,13 @@ Then I should receive a JSON response as follows:
 ### Feature 3: API - Favoriting an Asteroid
 
 Background: This story assumes the base data from running `rake db:seed`
-This SHOULD NOT save the asteroid data into the database. Asteroid data should be returned from the NASA API. You should save the `neo_reference_id` in the favorites table.
+This SHOULD NOT save the asteroid data into the database. 
+Asteroid data should be returned from the NASA API. 
+You should save the `neo_reference_id` in the favorites table.
 
 ```
-When I send a POST request to "/api/v1/user/favorites" with an 'api_key' of 'abc123' and a 'neo_reference_id' of '2021277'
+When I send a POST request to "/api/v1/user/favorites" with an 
+'api_key' of 'abc123' and a 'neo_reference_id' of '2021277'
 Then I should receive a response with a status code of 200
 And the body should be JSON as follows:
 ```
